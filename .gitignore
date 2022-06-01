@@ -1,0 +1,9 @@
+*.git
+*.iml
+.idea/
+target/
+*.zip
+*.exe
+.logs/
+.__pycache__/
+
