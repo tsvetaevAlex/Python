@@ -38,3 +38,14 @@ class SqlWrapper:
                             + "EngineType int [not NULL]);")
 
         self.dbConnection.commit()
+
+    def process_query(self, query):
+        self.cursor.execute(query)
+
+    def fill_datastorage(self):
+        print("get lucky with fill up our database let the magic begin.")
+
+        self.cursor.execute()
+
+
+
