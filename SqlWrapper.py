@@ -47,5 +47,3 @@ class SqlWrapper:
 
         self.cursor.execute()
 
-
-

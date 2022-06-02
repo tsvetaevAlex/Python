@@ -4,7 +4,7 @@ import os
 
 class TestEnvironment:
 
-    def __init__(self, exam_database_name):
+    def __init__(self):
         self.database_name = exam_database_name
         self.sql = SqlWrapper(exam_database_name)
 
