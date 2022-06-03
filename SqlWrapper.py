@@ -1,10 +1,12 @@
 import sqlite3
 from sqlite3 import Error
-
+imnport DataDump
 
 class SqlWrapper:
 
     def __init__(self, test_db_name):
+        self.dataDump = DataDump
+
         self.cursor = None
         self.dbConnection = None
         self.testDb = test_db_name
@@ -39,10 +41,10 @@ class SqlWrapper:
 
         self.dbConnection.commit()
 
-    def process_query(self, query):
-        self.cursor.execute(query)
+    def createship(self):
+        weapon = self.environment.weaponlist
+        hull = self
 
-    def fill_datastorage(self):
         print("get lucky with fill up our database let the magic begin.")
 
         self.cursor.execute()

@@ -25,15 +25,11 @@ class TestEnvironment:
         self.sql.create_table_engines()
 
     def getlits(self, filename):
-        #random.choice(city_list)
         with open(filename) as file:
             for line in file:
                 shipname = line.rstrip()
                 self.namelist.append(shipname)
                 print(shipname)
-
-                #query = "insert into ship"
-                #self.sql.process_query(self,query)
 
 
     def cleanup(self):
@@ -45,4 +41,4 @@ class TestEnvironment:
         utils.set_enginenamelist_filename("EngineTypeList.txt")
         utils.set_shipameslist_filename("ListOfShipNames.txt")
         utils.set_weaponlist_filename("weaponList.txt")
-        utils.set_hulllist_filename("")
+        utils.set_hulllist_filename("hulls.txt")
