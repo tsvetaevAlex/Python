@@ -1,51 +1,50 @@
 import configparser
 from distutils.command.config import config
 from random import random, randrange
-
-#from TestEnvironment import namelist
 import TestEnvironment
-
-from utils import get_equipmentlist_fromfile
-
-
+from TestEnvironment import
 def getweapon():
     return randrange(1, 20, 1)
 
 
+def gethull():
+    return randrange(1, 5, 1)
+
+
 class DataDump:
     def __init__(self):
-        selr.rand = random()
-        self.environment = TestEnvironment
+
+        self.namelist = []
+        self.enginelist = []
+        self.hulllist = []
+        self.weaponlist = []
+
+        self.rand = random()
+        self.environment = TestEnvironment.
         self.config = configparser.ConfigParser()
         self.config.read("settings.ini")
-        self.config = configparser.ConfigParser()  # создаём объекта парсера
+        self.config = configparser.ConfigParser()
         self.shipNamesLis_filename = config["EQUIPMENT"]["ShipnameListFile"]
-        self.shipNamesLis = []
+        self.shipNamesLis = self.environment.getlist(self, self.shipNamesLis_filename, self.namelist)
         self.enginesListFile = config["EQUIPMENT"]["EngineListFile"]
-        self.enginesList = []
+        self.enginesList = self.environment.getlist(self, self.enginesListFile, self.enginelist)
         self.weaponListFile = config["EQUIPMENT"]["weaponListFile"]
-        self.weaponList = []
+        self.weaponList =  self.environment.getlist(self, self.weaponListFile, self.weaponlist)
         self.hullListFile = config["EQUIPMENT"]["hullListFile"]
-        self.hullList = []
+        self.hullList =  self.environment.getlist(self, self.hullListFile, self.hulllist)
 
-        self.shipNamesLis = get_equipmentlist_fromfile(self.shipNamesLis_filename)
-        self.enginesList = get_equipmentlist_fromfile(self.enginesListFile)
-        self.weaponList = get_equipmentlist_fromfile(self.weaponListFile)
-        self.hullList = get_equipmentlist_fromfile(self.hullListFile)
-
-    def gethull(self):
-        return randrange(1, 5, 1)
-
-    def getweapon(self):
+    @staticmethod
+    def get_weapon():
         return randrange(1, 20, 1)
 
-    def getengine(self):
+    @staticmethod
+    def get_engine():
         return randrange(1, 6, 1)
 
-    def geshipname(self):
+    def get_shipname(self):
         return random.choice(self.environment.namelist)
 
-    def set_equipmentlist_filename(self, enginenane_listfilename):
+    def set_equipment_list_filename(self, enginenane_listfilename):
         self.enginesListFile = enginenane_listfilename
         # random.choice(city_list)
         with open(self.enginesListFile) as file:
