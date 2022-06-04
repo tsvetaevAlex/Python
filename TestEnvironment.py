@@ -5,14 +5,9 @@ import os
 class TestEnvironment:
 
     def __init__(self, exam_database_name):
+
         self.database_name = exam_database_name
         self.sql = SqlWrapper(exam_database_name)
-
-        self.targetlist = []
-        self.namelist = []
-        self.enginelist = []
-        self.hulllist = []
-        self.weaponlist = []
 
     def prepare(self):
         print("going to create a ", self.database_name, "data base")
@@ -21,11 +16,11 @@ class TestEnvironment:
         self.sql.create_table_hull()
         self.sql.create_table_weapons()
         self.sql.create_table_engines()
-
+        self.sql.createships()
     def getlist(self, filename, targetlist):
         """
         :param filename: test data file
-        :param targetlist: list of test data from test data file to be retuened
+        :param targetlist: list of test data from test data file to be returned
         :return: list of equipment names from test data files
         :rtype: list of equipment names from test data files
         """
@@ -41,4 +36,3 @@ class TestEnvironment:
         print("\r\n")
         if os.path.isfile(self.database_name):
             os.remove(self.database_name)
-
