@@ -1,13 +1,24 @@
 from SqlWrapper import SqlWrapper
+import configparser
 import os
 
 
 class TestEnvironment:
+    def __init__(self) -> object:
+        self.config = configparser
+        self.config_filename = None
+        self.environment = TestEnvironment.TestEnvironment()
+        self.config = configparser.ConfigParser()
+        self.config.read(self.config_filename)
+        self.config = configparser.ConfigParser()
+        self.config = configparser.ConfigParser()
+        self.targetlist = None
+        self.database_name = (self.config["EQUIPMENT"]["ShipnameListFile"])
+        print(self.database_name)
+        self.sql = SqlWrapper(self.config["EQUIPMENT"]["exam_database"])
 
-    def __init__(self, exam_database_name):
-
-        self.database_name = exam_database_name
-        self.sql = SqlWrapper(exam_database_name)
+    def setCongigFIleName(self, filename):
+        self.config_filename = filename
 
     def prepare(self):
         print("going to create a ", self.database_name, "data base")

@@ -15,7 +15,7 @@ class DataDump:
 
         self.environment = TestEnvironment.TestEnvironment()
         self.config = configparser.ConfigParser()
-        self.config.read("settings.ini")
+        self.config.read(self.environment.congig_filename)
         self.config = configparser.ConfigParser()
         self.shipNamesLis_filename = self.config["EQUIPMENT"]["ShipnameListFile"]
         self.shipNamesLis = self.environment.getlist(self, self.shipNamesLis_filename, self.namelist)
