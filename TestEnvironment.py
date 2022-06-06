@@ -1,49 +1,52 @@
 from SqlWrapper import SqlWrapper
 import configparser
 import os
+import main
+import DataDump
 
 
 class TestEnvironment:
-    def __init__(self) -> object:
-        self.config = configparser
-        self.config_filename = None
-        self.environment = TestEnvironment.TestEnvironment()
-        self.config = configparser.ConfigParser()
-        self.config.read(self.config_filename)
-        self.config = configparser.ConfigParser()
-        self.config = configparser.ConfigParser()
-        self.targetlist = None
-        self.database_name = (self.config["EQUIPMENT"]["ShipnameListFile"])
-        print(self.database_name)
-        self.sql = SqlWrapper(self.config["EQUIPMENT"]["exam_database"])
+    def __init__(self):
 
-    def setCongigFIleName(self, filename):
-        self.config_filename = filename
+        self.config = configparser
+        self.environment = TestEnvironment()
+        self.config = configparser.ConfigParser()
+        self.config.read(main.configuration_filename)
+        self.config = configparser.ConfigParser()
+        self.config = configparser.ConfigParser()
+        self.config_filename = main.configuration_filename
+        self.sql = SqlWrapper(self.config_filename)
+        self.resultlist = []
+        self.database_name = main.exam_database
+        print(self.database_name)
 
     def prepare(self):
-        print("going to create a ", self.database_name, "data base")
-        self.sql.create_database(self.database_name)
+        self.database_name = main.exam_database
+        self.sql.create_database(main.configuration_filename)
         self.sql.create_table_ships()
-        self.sql.create_table_hull()
+        self.sql.create_table_hulls()
+        self.sql.insert_hull_details()
         self.sql.create_table_weapons()
+        self.sql.insert_weapon_details()
         self.sql.create_table_engines()
-        self.sql.createships()
-    def getlist(self, filename, targetlist):
+        self.sql.insert_engine_details()
+        self.sql.create_table_hulls()
+        self.sql.insert_hull_details()
+
+        self.sql.BattleShips_CreateARmada()
+
+    def getList_fromfile(self, datasource_filename):
         """
-        :param filename: test data file
-        :param targetlist: list of test data from test data file to be returned
-        :return: list of equipment names from test data files
-        :rtype: list of equipment names from test data files
+        :param datasource_filename: test data file
         """
-        with open(filename) as file:
-            for line in file:
-                line = line.rstrip()
-                self.targetlist.append(line)
-                print(line)
-                return targetlist
+        if os.path.isfile(self.database_name):
+            with open(datasource_filename) as file:
+                for line in file:
+                    line = line.rstrip()
+                    self.resultlist.append(line)
+                    print(line)
+            return self.resultlist
 
     def cleanup(self):
+        os.remove(self.database_name)
         print("CleanUp environment, delete outdated test database: ", self.database_name)
-        print("\r\n")
-        if os.path.isfile(self.database_name):
-            os.remove(self.database_name)

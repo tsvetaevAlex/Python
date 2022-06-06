@@ -1,9 +1,10 @@
-from TestEnvironment import TestEnvironment
+import TestEnvironment
 
-
+configuration_filename = "setting.ini"
+exam_database = "ArmadaTest.db"
 if __name__ == '__main__':
-    environment = TestEnvironment()
-    environment.setCongigFIleName("setting.ini")
-    environment.prepare(self)
-    print("HOORAY")
-    environment.cleanup(self)
+    environment = TestEnvironment.TestEnvironment()
+
+environment.prepare()
+print("HOORAY")
+environment.cleanup()

@@ -5,3 +5,16 @@ bastion
 Mark X
 АК-630
 АК-726
+shells with white phosphorus
+nuclear shells
+armor piercing shells
+weapon_11
+weapon_12
+weapon_13
+weapon_14
+weapon_15
+weapon_16
+weapon_17
+weapon_18
+weapon_19
+weapon_20
