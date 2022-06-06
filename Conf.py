@@ -1,0 +1,6 @@
+configuration_filename = "F:\Workspace\src\BattlrShips\Python\setting.ini"
+exam_database = "ArmadaTest.db"
+BattleShipNames = "ListOfNames.txt"
+BattleShipHulls = "hulls.txt"
+BattleShipWeapons = "weaponList.txt"
+BattleShipEngines = "EngineTypeList.txt"

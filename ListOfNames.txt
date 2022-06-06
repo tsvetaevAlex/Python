@@ -114,8 +114,7 @@ ares
 tanos
 ace of diamonds
 gugster
-valciria
-anubis
+valciri
 matir
 thanatos
 Minotaur
@@ -129,11 +128,11 @@ venom
 punisher
 shield
 escalibur
-anubis
 hell hound
 white swan
 enemy seeker
 saint Valentine
+anubis
 veresk
 himera
 sarge
@@ -152,7 +151,6 @@ lighting bolt
 fire pilar
 firestarter
 black jack
-joker
 mondshtadt
 inazuma
 liyue
