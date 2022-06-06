@@ -4,6 +4,7 @@
 target/
 *.zip
 *.exe
+*.db
 .logs/
 .__pycache__/
 
