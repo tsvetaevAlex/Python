@@ -1,0 +1,1 @@
+from Polindrom import is_polindrom
