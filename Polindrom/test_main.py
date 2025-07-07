@@ -2,7 +2,7 @@ import sys
 import os
 sys.path.insert(0, os.path.dirname(__file__))
 
-from Polindrom.polindrom_pkg import is_polindrom
+from polindrom_pkg.polindrom import is_polindrom
 
 def test_palindrom_true():
     assert is_polindrom("madam") == True, "is_polindrom 1st assert test passed"
