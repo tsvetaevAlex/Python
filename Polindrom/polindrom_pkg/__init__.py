@@ -1,0 +1,1 @@
+from polindrom_pkg.polindrom import is_polindrom
