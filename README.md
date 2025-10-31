@@ -1,13 +1,13 @@
-code of various exercise in python
-
-
-subject: 
- - main branch for current Subj is: Linked List
- - goals:
-  - ListGenerator is a function to generate N instateces of nodes(base struct Elem) list to work wit it.  # removed as an unapproved enhancement
-  - printout  with ASK vector done at 1.12.2023 0:27 AM
-  - reverse printout  with DESC vector
-  - add reverse print of linked list of elements in range(1, 5) at 1.12.2023 4:09 PM
-
-ListGenerator branch:
- - implement 1st part of common functionality. generator of N instance inro linked list
+# DA-602 ветка это рабочая тетрадь по учебной пограмме
+``
+по профессионаJIьному обучению пlплп дополнительному профессиональному
+образованию отдельных категорий граждан в рамка)( реаJIIIIации мероприятий
+федерального проекта
+<<Аlrrивные меры содействия занятостиD национiUьного проекта (Кад)ы>)
+обучение по программе «Data-аналитика: Python и SQL в анализе данных» (Big Data)
+``
+код по разнообразным задачам на языке Python
+* Тема. 1.1. Типы данных и операции над ними
+* Тема 1.2. Лекция. Коллекции в Python и операции над ними
+* Тема 1.3. Управляющие структуры Лекция Управляющие операторы
+* Тема 1.4. Создание пользовательских функций
