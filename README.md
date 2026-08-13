@@ -1,10 +1,6 @@
-code of various exercise in python
-
-
 subject: 
- - main branch for current Subj is: Linked List
+python code with various exercise
  - goals:
-  - ListGenerator is a function to generate N instateces of nodes(base struct Elem) list to work wit it.  # removed as an unapproved enhancement
   - printout  with ASK vector done at 1.12.2023 0:27 AM
   - reverse printout  with DESC vector
   - add reverse print of linked list of elements in range(1, 5) at 1.12.2023 4:09 PM
@@ -12,13 +8,11 @@ subject:
 python run:
 usage:
 >python .\polindrom.py kazak
-<Это палиндром.
+output: Это палиндром.
 >python .\polindrom.py love
-<Это не палиндром.
+output: Это не палиндром.
 
 pytest run:
 pytest -s .\test_palindrom.py
 
 ```
-ListGenerator branch:
- - implement 1st part of common functionality. generator of N instance inro linked list
